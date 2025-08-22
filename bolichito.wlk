@@ -23,6 +23,17 @@ object bolichito {
         return objetoEnElMostrador.peso() >= objetoEnLaVidriera.peso()
     }
 
+   
 
+    method puedeMejorar() {
+        return (not estaEquilibrado()) or esMonocromatico()
+    }
 
+    method tieneObjetoDeColor(unColor) {
+        return (objetoEnElMostrador.color() == unColor) or (objetoEnLaVidriera.color() == unColor)
+        }
+
+    method puedeOfrecerseElObjeto(unCliente) {
+        return (objetoEnElMostrador.leGusta(unCliente) or objetoEnLaVidriera.leGusta(unCliente))
+        }
 }
